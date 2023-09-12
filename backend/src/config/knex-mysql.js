@@ -1,10 +1,10 @@
 const mysqlConfig = {
-    development:{
-        client:'mysql',
+    development: {
+        client: 'mysql',
         connection: {
-            //jalar desde local ENV
+            //TODO: jalar desde local ENV
             host: 'localhost',
-            user:'root',
+            user: 'root',
             password: 'root',
             database: 'auxiliatron'
         }

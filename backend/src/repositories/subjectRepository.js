@@ -3,15 +3,15 @@ const pgConnection = require("../config/knex-pg");
 console.log(pgConnection);
 const db = knex(pgConnection.development);
 
-const getUser = async () => {
+const getSubject = async () => {
   try {
-    const users = await db("users").select("*");
-    const usersJson = users.map((row) => ({
+    const subject = await db("subjects").select("*");
+    const usersJson = subject.map((row) => ({
       id: row.id,
       name: row.name,
-      lastname: row.lastname,
-      code: row.code,
-      username: row.username,
+      description: row.description,
+      credits: row.credits,
+      professor: row.professor,
     }));
     return usersJson;
   } catch (e) {
@@ -20,4 +20,4 @@ const getUser = async () => {
   }
 };
 
-module.exports.getUser = getUser ;
+module.exports.getSubject = getSubject ;
