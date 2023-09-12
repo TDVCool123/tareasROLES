@@ -26,5 +26,4 @@ const getSubjectService = async () => {
   }
 };
 
-module.exports =  getSubjectByIdService;
-module.exports = getSubjectService;
+module.exports =  {getSubjectByIdService,getSubjectService};

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const getUserController = require('../controllers/subjectByIdController');
+const getSubjectByIdController = require('../controllers/subjectByIdController');
+const getSubjectController = require('../controllers/subjectController');
 const { checkAuth } = require('../middleware/auth');
 
 /**
@@ -12,6 +13,8 @@ const { checkAuth } = require('../middleware/auth');
  *       200:
  *         description: Lista de usuarios obtenida exitosamente
  */
-router.get('/subject', checkAuth,  getUserController);
+router.get('/subject/id', checkAuth,  getSubjectByIdController);
+router.get('/subject', checkAuth,  getSubjectController);
+
 
 module.exports = router;

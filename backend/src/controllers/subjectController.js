@@ -1,4 +1,4 @@
-const getSubjectByIdService = require('../services/Services');
+const getSubjectService = require('../services/Services');
 const logger = require('../utils/logger');
 const getSubjectByIdController = async (req, res) => {
     
@@ -6,7 +6,7 @@ const getSubjectByIdController = async (req, res) => {
 
     logger.info('getSubjectByIdController - Req', req);
     try {
-        const users = await getSubjectByIdService.getSubjectByIdService(id);
+        const users = await getSubjectService.getSubjectService();
         return res.status(200).json({
             success: true,
             message: 'Users retrieved successfully',
