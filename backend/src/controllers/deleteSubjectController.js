@@ -1,12 +1,12 @@
 const service = require('../services/Services');
 const logger = require('../utils/logger');
-const getSubjectByIdController = async (req, res) => {
+const deleteSubjectByIdController = async (req, res) => {
     
     const { id } = req.query;
 
-    logger.info('getSubjectByIdController - Req', req);
+    logger.info('deleteSubjectByIdController - Req', req);
     try {
-        const users = await service.getSubjectByIdService(id);
+        const users = await service.deleteSubjectByIdService(id);
         return res.status(200).json({
             success: true,
             message: 'Users retrieved successfully',
@@ -22,4 +22,4 @@ const getSubjectByIdController = async (req, res) => {
     
 };
 
-module.exports = getSubjectByIdController;
+module.exports = deleteSubjectByIdController;

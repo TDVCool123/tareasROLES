@@ -1,12 +1,13 @@
 const service = require('../services/Services');
 const logger = require('../utils/logger');
-const getSubjectByIdController = async (req, res) => {
+const putSubjectController = async (req, res) => {
     
+    const subject = req.body;
     const { id } = req.query;
 
-    logger.info('getSubjectByIdController - Req', req);
+    logger.info('putSubjectController - Req', req);
     try {
-        const users = await service.getSubjectByIdService(id);
+        const users = await service.putSubjectByIdService(id, subject);
         return res.status(200).json({
             success: true,
             message: 'Users retrieved successfully',
@@ -22,4 +23,4 @@ const getSubjectByIdController = async (req, res) => {
     
 };
 
-module.exports = getSubjectByIdController;
+module.exports = putSubjectController;
