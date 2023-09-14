@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd backend'
+                sh 'cd backend && npm start'
             }
         }
         stage('Deploy') {
