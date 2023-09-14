@@ -6,22 +6,12 @@ pipeline {
     stages {
         stage('Dependencies') {
             steps {
-                sh 'cd client/admin && npm install'
+                sh 'cd backend && npm install'
             }
         }
         stage('Build') {
             steps {
-                sh 'cd client/admin'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'cd client/admin && npm run test' 
-            }
-        }
-        stage('Test e2e') {
-            steps {
-               sh 'cd client/admin && npm run e2e'
+                sh 'cd backend'
             }
         }
         stage('Deploy') {
