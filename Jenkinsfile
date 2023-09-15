@@ -9,11 +9,7 @@ pipeline {
                 sh 'cd fronted/Calculator && npm install'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'cd fronted/Calculator && npm start'
-            }
-        }
+    
         stage('Checkout') {
             steps {
                 checkout scm
