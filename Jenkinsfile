@@ -24,7 +24,7 @@ pipeline {
                     sh 'cd fronted/Calculator && npm run build'
 
                     // Implementar en Vercel usando el comando 'vercel' (asegúrate de tener 'vercel-cli' instalado)
-                    sh 'cd fronted/Calculator && npx vercel --prod'
+                    sh 'cd fronted/Calculator && npx vercel --prod --token vercel --yes'
                 }
             }
         }
