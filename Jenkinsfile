@@ -15,12 +15,12 @@ pipeline {
   stages {
     stage('Dependencies') {
             steps {
-                sh 'cd backend && npm install'
+                sh 'cd fronted/Calculator && npm install'
             }
     }
     stage('Build') {
       steps {
-        sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
+        sh 'cd fronted/Calculator && docker build -t $IMAGE_NAME:$IMAGE_TAG .'
       }
     }
     stage('Login') {
