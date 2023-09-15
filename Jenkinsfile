@@ -2,6 +2,7 @@ pipeline {
   agent any
   tools {
         nodejs 'pepitoNode'
+        docker 'pepitoDoc'
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
