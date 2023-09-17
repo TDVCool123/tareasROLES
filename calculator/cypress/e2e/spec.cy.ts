@@ -1,6 +1,6 @@
 describe('My First Test', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5174')
+    cy.visit('http://localhost:5173')
   })
   
   it('1 + 1', () => {
