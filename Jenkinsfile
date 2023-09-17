@@ -37,7 +37,7 @@ pipeline {
                 script {
 
                     // Implementar en Vercel usando el comando 'vercel' (asegúrate de tener 'vercel-cli' instalado)
-                    sh 'npx vercel --prod --token $VERCEL --yes'
+                    sh 'cd calculator && npx vercel --prod --token $VERCEL --yes'
                 }
             }
         }
