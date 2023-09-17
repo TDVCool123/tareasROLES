@@ -40,6 +40,6 @@ pipeline {
                     sh 'npx vercel --prod --token $VERCEL --yes'
                 }
             }
-        }*/
+        }
     }
 }
