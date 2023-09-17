@@ -9,17 +9,30 @@ pipeline {
     stages {
         stage('Dependencies') {
             steps {
-                sh 'cd fronted/Calculator && npm install'
+                sh 'cd calculator && npm install'
             }
         }
     
-        stage('Checkout') {
+        stage('Testing') {
             steps {
-                checkout scm
+                sh 'cd calculator && npm test'
             }
         }
 
-        stage('Build and Deploy') {
+         stage('e2e') {
+            steps {
+                sh 'cd calculator && npm run e2e '
+            }
+        }
+
+        stage('Build') {
+            steps {
+                building...
+            }
+        }
+
+
+       /* stage('Build and Deploy') {
             steps {
                 script {
                     // Instalar dependencias y construir tu aplicación Vite
@@ -30,6 +43,6 @@ pipeline {
                     sh 'cd fronted/Calculator && npx vercel --prod --token $VERCEL --yes'
                 }
             }
-        }
+        }*/
     }
 }
