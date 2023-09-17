@@ -32,15 +32,12 @@ pipeline {
         }
 
 
-       /* stage('Build and Deploy') {
+       stage('Deploy') {
             steps {
                 script {
-                    // Instalar dependencias y construir tu aplicación Vite
-                    sh 'cd fronted/Calculator && npm install'
-                    sh 'cd fronted/Calculator && npm run build'
 
                     // Implementar en Vercel usando el comando 'vercel' (asegúrate de tener 'vercel-cli' instalado)
-                    sh 'cd fronted/Calculator && npx vercel --prod --token $VERCEL --yes'
+                    sh 'npx vercel --prod --token $VERCEL --yes'
                 }
             }
         }*/
